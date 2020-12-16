@@ -1,3 +1,3 @@
 # ludoDice
-it's a virtual ludo dice
-*python3 mendatory
+it's a virtual ludo dice(with colors)
+"*python3 mendatory"
