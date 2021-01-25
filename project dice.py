@@ -35,8 +35,8 @@ if __name__ == "__main__":
         listw = list("123456")
         e = random.choice(listw) #random is the freakin' module that helps u to print random numbers ;)
         print(b+"outcome /",e + g) 
-        a = str(input('Wanna roll me again?[enter/n]')
-        if a == 'n'
+        a = input('Wanna roll me again?[enter/n]')
+        if a == 'n':
             exit()
         else:
             pass
