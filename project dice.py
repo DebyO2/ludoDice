@@ -1,7 +1,6 @@
 import random
 import os
 
-
 try:
     import pyfiglet
     from colorama import init, Fore, Style
@@ -9,24 +8,30 @@ except ImportError:
      os.system("pip3 install pyfiglet")
      os.system('pip3 install colorama')
 
-os.system("cls")
+def clr():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 if __name__ == "__main__":
     r = Fore.RED
     g = Fore.GREEN
     b = Fore.BLUE
     y = Fore.YELLOW
-    print(r + pyfiglet.figlet_format('The DiCe') + b )
-    print("author: Mortal_coder\n")
+    f = pyfiglet.Figlet(font='slant')
+    logo = f.renderText('Dicey')
+    print(r + logo + g)
+    print("Author: Mortal_coder\n")
 
-    print("Hello i m the best alternate to a physical dice,")
-    print(y + "let me choose a number on a dice" + g)
+    print("Hello i\'m the best alternate to a physical dice,")
+    print(y + "Let\'s get rollin\'!" + g)
     while True:
         listw = list("123456")
         e = random.choice(listw)
-        print(b+"outcome /",e + g) 
-        a = input("if u want to roll the dice again(if u don't want to then just type " + r + "no" + g + ") just press "+ y +"enter/" +g)
-        if 'no' in a:
+        print(f'{b}Outcome : {e}{g}') 
+        a = str(input(g + 'Wanna roll me again?[y/n]: '))
+        if a == 'n':
             exit()
         else:
             pass
