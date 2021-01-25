@@ -19,7 +19,7 @@ except ImportError:
         pip install colorama
         ''')    
     elif chk_connection() == False:
-        print("You are not connected to the internet in order to install reqired packages)
+        print("You are not connected to the internet in order to install reqired packages")
         exit()
   
 finally:
