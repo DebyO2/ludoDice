@@ -1,16 +1,32 @@
 import random
 import os
+import socket
 
+def chk_connection():
+    try:
+        socket.create_connection("google.com",80)
+        return True
+    except OSError:
+        return False
 
 try:
     import pyfiglet
     from colorama import init, Fore, Style
 except ImportError:
-     os.system('''
-     pip install pyfiglet
-     pip install colorama
-     ''')
-
+    if chk_connection() == True:
+        os.system('''
+        pip install pyfiglet
+        pip install colorama
+        ''')    
+    elif chk_connection() == False:
+        print("You are not connected to the internet in order to install reqired packages)
+        exit()
+  
+finally:
+    import pyfiglet
+    from colorama import init,Fore,Style
+    import colorama
+    colorama.init()
 def clr():
     if os.name == 'nt':
         os.system('cls')
